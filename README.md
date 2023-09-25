@@ -2,14 +2,14 @@
   <img src="resources/mmdet3d-logo.png" width="600"/>
   <div>&nbsp;</div>
   <div align="center">
-    <b><font size="5">OpenMMLab website</font></b>
+    <b><font size="5">OpenMMLab 官网</font></b>
     <sup>
       <a href="https://openmmlab.com">
         <i><font size="4">HOT</font></i>
       </a>
     </sup>
     &nbsp;&nbsp;&nbsp;&nbsp;
-    <b><font size="5">OpenMMLab platform</font></b>
+    <b><font size="5">OpenMMLab 开放平台</font></b>
     <sup>
       <a href="https://platform.openmmlab.com">
         <i><font size="4">TRY IT OUT</font></i>
@@ -19,25 +19,25 @@
   <div>&nbsp;</div>
 
 [![PyPI](https://img.shields.io/pypi/v/mmdet3d)](https://pypi.org/project/mmdet3d)
-[![docs](https://img.shields.io/badge/docs-latest-blue)](https://mmdetection3d.readthedocs.io/en/latest/)
+[![docs](https://img.shields.io/badge/docs-latest-blue)](https://mmdetection3d.readthedocs.io/zh_CN/latest/)
 [![badge](https://github.com/open-mmlab/mmdetection3d/workflows/build/badge.svg)](https://github.com/open-mmlab/mmdetection3d/actions)
 [![codecov](https://codecov.io/gh/open-mmlab/mmdetection3d/branch/main/graph/badge.svg)](https://codecov.io/gh/open-mmlab/mmdetection3d)
 [![license](https://img.shields.io/github/license/open-mmlab/mmdetection3d.svg)](https://github.com/open-mmlab/mmdetection3d/blob/main/LICENSE)
 [![open issues](https://isitmaintained.com/badge/open/open-mmlab/mmdetection3d.svg)](https://github.com/open-mmlab/mmdetection3d/issues)
 [![issue resolution](https://isitmaintained.com/badge/resolution/open-mmlab/mmdetection3d.svg)](https://github.com/open-mmlab/mmdetection3d/issues)
 
-[📘Documentation](https://mmdetection3d.readthedocs.io/en/latest/) |
-[🛠️Installation](https://mmdetection3d.readthedocs.io/en/latest/get_started.html) |
-[👀Model Zoo](https://mmdetection3d.readthedocs.io/en/latest/model_zoo.html) |
-[🆕Update News](https://mmdetection3d.readthedocs.io/en/latest/notes/changelog.html) |
-[🚀Ongoing Projects](https://github.com/open-mmlab/mmdetection3d/projects) |
-[🤔Reporting Issues](https://github.com/open-mmlab/mmdetection3d/issues/new/choose)
+[📘使用文档](https://mmdetection3d.readthedocs.io/zh_CN/latest/) |
+[🛠️安装教程](https://mmdetection3d.readthedocs.io/zh_CN/latest/get_started.html) |
+[👀模型库](https://mmdetection3d.readthedocs.io/zh_CN/latest/model_zoo.html) |
+[🆕更新日志](https://mmdetection3d.readthedocs.io/en/latest/notes/changelog.html) |
+[🚀进行中的项目](https://github.com/open-mmlab/mmdetection3d/projects) |
+[🤔报告问题](https://github.com/open-mmlab/mmdetection3d/issues/new/choose)
 
 </div>
 
 <div align="center">
 
-English | [简体中文](README_zh-CN.md)
+[English](README.md) | 简体中文
 
 </div>
 
@@ -61,32 +61,32 @@ English | [简体中文](README_zh-CN.md)
     <img src="https://user-images.githubusercontent.com/25839884/219026120-ba71e48b-6e94-4bd4-b4e9-b7d175b5e362.png" width="3%" alt="" /></a>
 </div>
 
-## Introduction
+## 简介
 
-MMDetection3D is an open source object detection toolbox based on PyTorch, towards the next-generation platform for general 3D detection. It is a part of the [OpenMMLab](https://openmmlab.com/) project.
+MMDetection3D 是一个基于 PyTorch 的目标检测开源工具箱，下一代面向 3D 检测的平台。它是 [OpenMMlab](https://openmmlab.com/) 项目的一部分。
 
-The main branch works with **PyTorch 1.8+**.
+主分支代码目前支持 PyTorch 1.8 以上的版本。
 
 ![demo image](resources/mmdet3d_outdoor_demo.gif)
 
 <details open>
-<summary>Major features</summary>
+<summary>主要特性</summary>
 
-- **Support multi-modality/single-modality detectors out of box**
+- **支持多模态/单模态的检测器**
 
-  It directly supports multi-modality/single-modality detectors including MVXNet, VoteNet, PointPillars, etc.
+  支持多模态/单模态检测器，包括 MVXNet，VoteNet，PointPillars 等。
 
-- **Support indoor/outdoor 3D detection out of box**
+- **支持户内/户外的数据集**
 
-  It directly supports popular indoor and outdoor 3D detection datasets, including ScanNet, SUNRGB-D, Waymo, nuScenes, Lyft, and KITTI. For nuScenes dataset, we also support [nuImages dataset](https://github.com/open-mmlab/mmdetection3d/tree/main/configs/nuimages).
+  支持室内/室外的 3D 检测数据集，包括 ScanNet，SUNRGB-D，Waymo，nuScenes，Lyft，KITTI。对于 nuScenes 数据集，我们也支持 [nuImages 数据集](https://github.com/open-mmlab/mmdetection3d/tree/main/configs/nuimages)。
 
-- **Natural integration with 2D detection**
+- **与 2D 检测器的自然整合**
 
-  All the about **300+ models, methods of 40+ papers**, and modules supported in [MMDetection](https://github.com/open-mmlab/mmdetection/blob/3.x/docs/en/model_zoo.md) can be trained or used in this codebase.
+  [MMDetection](https://github.com/open-mmlab/mmdetection/blob/3.x/docs/zh_cn/model_zoo.md) 支持的 **300+ 个模型，40+ 的论文算法**，和相关模块都可以在此代码库中训练或使用。
 
-- **High efficiency**
+- **性能高**
 
-  It trains faster than other codebases. The main results are as below. Details can be found in [benchmark.md](./docs/en/notes/benchmarks.md). We compare the number of samples trained per second (the higher, the better). The models that are not supported by other codebases are marked by `✗`.
+  训练速度比其他代码库更快。下表可见主要的对比结果。更多的细节可见[基准测评文档](./docs/zh_cn/notes/benchmarks.md)。我们对比了每秒训练的样本数（值越高越好）。其他代码库不支持的模型被标记为 `✗`。
 
   |       Methods       | MMDetection3D | [OpenPCDet](https://github.com/open-mmlab/OpenPCDet) | [votenet](https://github.com/facebookresearch/votenet) | [Det3D](https://github.com/poodarchu/Det3D) |
   | :-----------------: | :-----------: | :--------------------------------------------------: | :----------------------------------------------------: | :-----------------------------------------: |
@@ -98,92 +98,92 @@ The main branch works with **PyTorch 1.8+**.
 
 </details>
 
-Like [MMDetection](https://github.com/open-mmlab/mmdetection) and [MMCV](https://github.com/open-mmlab/mmcv), MMDetection3D can also be used as a library to support different projects on top of it.
+和 [MMDetection](https://github.com/open-mmlab/mmdetection)，[MMCV](https://github.com/open-mmlab/mmcv) 一样，MMDetection3D 也可以作为一个库去支持各式各样的项目。
 
-## What's New
+## 最新进展
 
-### Highlight
+### 亮点
 
-**We have renamed the branch `1.1` to `main` and switched the default branch from `master` to `main`. We encourage users to migrate to the latest version, though it comes with some cost. Please refer to [Migration Guide](docs/en/migration.md) for more details.**
+**我们将 `1.1` 分支重命名为 `main` 并将默认分支从 `master` 切换到 `main`。我们鼓励用户迁移到最新版本，请参考 [迁移指南](docs/en/migration.md)以了解更多细节。**
 
-We have constructed a comprehensive LiDAR semantic segmentation benchmark on SemanticKITTI, including Cylinder3D, MinkUNet and SPVCNN methods. Noteworthy, the improved MinkUNetv2 can achieve 70.3 mIoU on the validation set of SemanticKITTI. We have also supported the training of BEVFusion and an occupancy prediction method, TPVFomrer, in our `projects`. More new features about 3D perception are on the way. Please stay tuned!
+我们在 SemanticKITTI 上构建了一个全面的点云语义分割基准，包括 Cylinder3D 、MinkUNet 和 SPVCNN 方法。其中，改进后的 MinkUNetv2 在验证集上可以达到 70.3 mIoU。我们还在 `projects` 中支持了 BEVFusion 的训练和全新的 3D 占有网格预测网络 TPVFormer。更多关于 3D 感知的新功能正在进行中。请继续关注！
 
-**v1.2.0** was released in 4/7/2023
+**v1.2.0** 版本已经在 2023.7.4 发布：
 
-- Support [New Config Type](https://mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html#a-pure-python-style-configuration-file-beta) in `mmdet3d/config`
-- Support the inference of [DSVT](<(https://arxiv.org/abs/2301.06051)>) in `projects`
-- Support downloading datasets from [OpenDataLab](https://opendatalab.com/) using `mim`
+- 在 `mmdet3d/config`中支持 [新Config样式](https://mmengine.readthedocs.io/en/latest/advanced_tutorials/config.html#a-pure-python-style-configuration-file-beta)
+- 在 `projects` 中支持 [DSVT](<(https://arxiv.org/abs/2301.06051)>) 的推理
+- 支持通过 `mim` 从 [OpenDataLab](https://opendatalab.com/) 下载数据集
 
-**v1.1.1** was released in 30/5/2023:
+**v1.1.1** 版本已经在 2023.5.30 发布：
 
-- Support [TPVFormer](https://arxiv.org/pdf/2302.07817.pdf) in `projects`
-- Support the training of BEVFusion in `projects`
-- Support lidar-based 3D semantic segmentation benchmark
+- 在 `projects` 中支持 [TPVFormer](https://arxiv.org/pdf/2302.07817.pdf)
+- 在 `projects` 中支持 BEVFusion 的训练
+- 支持基于激光雷达的 3D 语义分割基准
 
-## Installation
+## 安装
 
-Please refer to [Installation](https://mmdetection3d.readthedocs.io/en/latest/get_started.html) for installation instructions.
+请参考[快速入门文档](https://mmdetection3d.readthedocs.io/zh_CN/latest/get_started.html)进行安装。
 
-## Getting Started
-
-For detailed user guides and advanced guides, please refer to our [documentation](https://mmdetection3d.readthedocs.io/en/latest/):
+## 教程
 
 <details>
-<summary>User Guides</summary>
+<summary>用户指南</summary>
 
-- [Train & Test](https://mmdetection3d.readthedocs.io/en/latest/user_guides/index.html#train-test)
-  - [Learn about Configs](https://mmdetection3d.readthedocs.io/en/latest/user_guides/config.html)
-  - [Coordinate System](https://mmdetection3d.readthedocs.io/en/latest/user_guides/coord_sys_tutorial.html)
-  - [Dataset Preparation](https://mmdetection3d.readthedocs.io/en/latest/user_guides/dataset_prepare.html)
-  - [Customize Data Pipelines](https://mmdetection3d.readthedocs.io/en/latest/user_guides/data_pipeline.html)
-  - [Test and Train on Standard Datasets](https://mmdetection3d.readthedocs.io/en/latest/user_guides/train_test.html)
-  - [Inference](https://mmdetection3d.readthedocs.io/en/latest/user_guides/inference.html)
-  - [Train with Customized Datasets](https://mmdetection3d.readthedocs.io/en/latest/user_guides/new_data_model.html)
-- [Useful Tools](https://mmdetection3d.readthedocs.io/en/latest/user_guides/index.html#useful-tools)
+- [训练 & 测试](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/index.html#train-test)
+  - [学习配置文件](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/config.html)
+  - [坐标系](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/coord_sys_tutorial.html)
+  - [数据预处理](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/dataset_prepare.html)
+  - [自定义数据预处理流程](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/data_pipeline.html)
+  - [在标注数据集上测试和训练](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/train_test.html)
+  - [推理](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/inference.html)
+  - [在自定义数据集上进行训练](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/new_data_model.html)
+- [实用工具](https://mmdetection3d.readthedocs.io/zh_CN/latest/user_guides/index.html#useful-tools)
 
 </details>
 
 <details>
-<summary>Advanced Guides</summary>
+<summary>进阶教程</summary>
 
-- [Datasets](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#datasets)
-  - [KITTI Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/kitti.html)
-  - [NuScenes Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/nuscenes.html)
-  - [Lyft Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/lyft.html)
-  - [Waymo Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/waymo.html)
-  - [SUN RGB-D Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/sunrgbd.html)
-  - [ScanNet Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/scannet.html)
-  - [S3DIS Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/s3dis.html)
-  - [SemanticKITTI Dataset](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/datasets/semantickitti.html)
-- [Supported Tasks](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#supported-tasks)
-  - [LiDAR-Based 3D Detection](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_det3d.html)
-  - [Vision-Based 3D Detection](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/vision_det3d.html)
-  - [LiDAR-Based 3D Semantic Segmentation](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/supported_tasks/lidar_sem_seg3d.html)
-- [Customization](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/index.html#customization)
-  - [Customize Datasets](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_dataset.html)
-  - [Customize Models](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_models.html)
-  - [Customize Runtime Settings](https://mmdetection3d.readthedocs.io/en/latest/advanced_guides/customize_runtime.html)
+- [数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/index.html#datasets)
+  - [KITTI 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/kitti.html)
+  - [NuScenes 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/nuscenes.html)
+  - [Lyft 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/lyft.html)
+  - [Waymo 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/waymo.html)
+  - [SUN RGB-D 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/sunrgbd.html)
+  - [ScanNet 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/scannet.html)
+  - [S3DIS 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/s3dis.html)
+  - [SemanticKITTI 数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/datasets/semantickitti.html)
+- [支持的任务](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/index.html#supported-tasks)
+  - [基于激光雷达的 3D 检测](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/supported_tasks/lidar_det3d.html)
+  - [基于视觉的 3D 检测](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/supported_tasks/vision_det3d.html)
+  - [基于激光雷达的 3D 语义分割](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/supported_tasks/lidar_sem_seg3d.html)
+- [自定义项目](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/index.html#customization)
+  - [自定义数据集](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/customize_dataset.html)
+  - [自定义模型](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/customize_models.html)
+  - [自定义运行时配置](https://mmdetection3d.readthedocs.io/zh_CN/latest/advanced_guides/customize_runtime.html)
 
 </details>
 
-## Overview of Benchmark and Model Zoo
+## 基准测试和模型库
 
-Results and models are available in the [model zoo](docs/en/model_zoo.md).
+## 基准测试和模型库
+
+测试结果和模型可以在[模型库](docs/zh_cn/model_zoo.md)中找到。
 
 <div align="center">
-  <b>Components</b>
+  <b>模块组件</b>
 </div>
 <table align="center">
   <tbody>
     <tr align="center" valign="bottom">
       <td>
-        <b>Backbones</b>
+        <b>主干网络</b>
       </td>
       <td>
-        <b>Heads</b>
+        <b>检测头</b>
       </td>
       <td>
-        <b>Features</b>
+        <b>特性</b>
       </td>
     </tr>
     <tr valign="top">
@@ -216,27 +216,27 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
 </table>
 
 <div align="center">
-  <b>Architectures</b>
+  <b>算法模型</b>
 </div>
 <table align="center">
   <tbody>
     <tr align="center" valign="middle">
       <td>
-        <b>LiDAR-based 3D Object Detection</b>
+        <b>激光雷达 3D 目标检测</b>
       </td>
       <td>
-        <b>Camera-based 3D Object Detection</b>
+        <b>相机 3D 目标检测</b>
       </td>
       <td>
-        <b>Multi-modal 3D Object Detection</b>
+        <b>多模态 3D 目标检测</b>
       </td>
       <td>
-        <b>3D Semantic Segmentation</b>
+        <b>3D 语义分割</b>
       </td>
     </tr>
     <tr valign="top">
       <td>
-        <li><b>Outdoor</b></li>
+        <li><b>室外</b></li>
         <ul>
             <li><a href="configs/second">SECOND (Sensor'2018)</a></li>
             <li><a href="configs/pointpillars">PointPillars (CVPR'2019)</a></li>
@@ -249,7 +249,7 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
             <li><a href="configs/pv_rcnn">PV-RCNN (CVPR'2020)</a></li>
             <li><a href="projects/CenterFormer">CenterFormer (ECCV'2022)</a></li>
         </ul>
-        <li><b>Indoor</b></li>
+        <li><b>室内</b></li>
         <ul>
             <li><a href="configs/votenet">VoteNet (ICCV'2019)</a></li>
             <li><a href="configs/h3dnet">H3DNet (ECCV'2020)</a></li>
@@ -259,7 +259,7 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
       </ul>
       </td>
       <td>
-        <li><b>Outdoor</b></li>
+        <li><b>室外</b></li>
         <ul>
           <li><a href="configs/imvoxelnet">ImVoxelNet (WACV'2022)</a></li>
           <li><a href="configs/smoke">SMOKE (CVPRW'2020)</a></li>
@@ -275,25 +275,25 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
         </ul>
       </td>
       <td>
-        <li><b>Outdoor</b></li>
+        <li><b>室外</b></li>
         <ul>
           <li><a href="configs/mvxnet">MVXNet (ICRA'2019)</a></li>
           <li><a href="projects/BEVFusion">BEVFusion (ICRA'2023)</a></li>
         </ul>
-        <li><b>Indoor</b></li>
+        <li><b>室内</b></li>
         <ul>
           <li><a href="configs/imvotenet">ImVoteNet (CVPR'2020)</a></li>
         </ul>
       </td>
       <td>
-        <li><b>Outdoor</b></li>
+        <li><b>室外</b></li>
         <ul>
           <li><a href="configs/minkunet">MinkUNet (CVPR'2019)</a></li>
           <li><a href="configs/spvcnn">SPVCNN (ECCV'2020)</a></li>
           <li><a href="configs/cylinder3d">Cylinder3D (CVPR'2021)</a></li>
           <li><a href="projects/TPVFormer">TPVFormer (CVPR'2023)</a></li>
         </ul>
-        <li><b>Indoor</b></li>
+        <li><b>室内</b></li>
         <ul>
           <li><a href="configs/pointnet2">PointNet++ (NeurIPS'2017)</a></li>
           <li><a href="configs/paconv">PAConv (CVPR'2021)</a></li>
@@ -342,23 +342,23 @@ Results and models are available in the [model zoo](docs/en/model_zoo.md).
 |     PETR      |   ✗    |   ✓    |   ✗    |     ✗      |   ✗    |   ✗   |    ✗    |  ✗  |     ✗      |     ✗      |    ✗     |
 |   TPVFormer   |   ✓    |   ✗    |   ✗    |     ✗      |   ✗    |   ✗   |    ✗    |  ✗  |     ✗      |     ✗      |    ✗     |
 
-**Note:** All the about **500+ models, methods of 90+ papers** in 2D detection supported by [MMDetection](https://github.com/open-mmlab/mmdetection/blob/3.x/docs/en/model_zoo.md) can be trained or used in this codebase.
+**注意：**[MMDetection](https://github.com/open-mmlab/mmdetection/blob/3.x/docs/zh_cn/model_zoo.md) 支持的基于 2D 检测的 **300+ 个模型，40+ 的论文算法**在 MMDetection3D 中都可以被训练或使用。
 
-## FAQ
+## 常见问题
 
-Please refer to [FAQ](docs/en/notes/faq.md) for frequently asked questions.
+请参考 [FAQ](docs/zh_cn/notes/faq.md) 了解其他用户的常见问题。
 
-## Contributing
+## 贡献指南
 
-We appreciate all contributions to improve MMDetection3D. Please refer to [CONTRIBUTING.md](docs/en/notes/contribution_guides.md) for the contributing guideline.
+我们感谢所有的贡献者为改进和提升 MMDetection3D 所作出的努力。请参考[贡献指南](docs/en/notes/contribution_guides.md)来了解参与项目贡献的相关指引。
 
-## Acknowledgement
+## 致谢
 
-MMDetection3D is an open source project that is contributed by researchers and engineers from various colleges and companies. We appreciate all the contributors as well as users who give valuable feedbacks. We wish that the toolbox and benchmark could serve the growing research community by providing a flexible toolkit to reimplement existing methods and develop their own new 3D detectors.
+MMDetection3D 是一款由来自不同高校和企业的研发人员共同参与贡献的开源项目。我们感谢所有为项目提供算法复现和新功能支持的贡献者，以及提供宝贵反馈的用户。我们希望这个工具箱和基准测试可以为社区提供灵活的代码工具，供用户复现已有算法并开发自己的新的 3D 检测模型。
 
-## Citation
+## 引用
 
-If you find this project useful in your research, please consider cite:
+如果你觉得本项目对你的研究工作有所帮助，请参考如下 bibtex 引用 MMdetection3D：
 
 ```latex
 @misc{mmdet3d2020,
@@ -369,31 +369,50 @@ If you find this project useful in your research, please consider cite:
 }
 ```
 
-## License
+## 开源许可证
 
-This project is released under the [Apache 2.0 license](LICENSE).
+该项目采用 [Apache 2.0 开源许可证](LICENSE)。
 
-## Projects in OpenMMLab
+## OpenMMLab 的其他项目
 
-- [MMEngine](https://github.com/open-mmlab/mmengine): OpenMMLab foundational library for training deep learning models.
-- [MMCV](https://github.com/open-mmlab/mmcv): OpenMMLab foundational library for computer vision.
-- [MMEval](https://github.com/open-mmlab/mmeval): A unified evaluation library for multiple machine learning libraries.
-- [MIM](https://github.com/open-mmlab/mim): MIM installs OpenMMLab packages.
-- [MMPreTrain](https://github.com/open-mmlab/mmpretrain): OpenMMLab pre-training toolbox and benchmark.
-- [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab detection toolbox and benchmark.
-- [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab's next-generation platform for general 3D object detection.
-- [MMRotate](https://github.com/open-mmlab/mmrotate): OpenMMLab rotated object detection toolbox and benchmark.
-- [MMYOLO](https://github.com/open-mmlab/mmyolo): OpenMMLab YOLO series toolbox and benchmark.
-- [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab semantic segmentation toolbox and benchmark.
-- [MMOCR](https://github.com/open-mmlab/mmocr): OpenMMLab text detection, recognition, and understanding toolbox.
-- [MMPose](https://github.com/open-mmlab/mmpose): OpenMMLab pose estimation toolbox and benchmark.
-- [MMHuman3D](https://github.com/open-mmlab/mmhuman3d): OpenMMLab 3D human parametric model toolbox and benchmark.
-- [MMSelfSup](https://github.com/open-mmlab/mmselfsup): OpenMMLab self-supervised learning toolbox and benchmark.
-- [MMRazor](https://github.com/open-mmlab/mmrazor): OpenMMLab model compression toolbox and benchmark.
-- [MMFewShot](https://github.com/open-mmlab/mmfewshot): OpenMMLab fewshot learning toolbox and benchmark.
-- [MMAction2](https://github.com/open-mmlab/mmaction2): OpenMMLab's next-generation action understanding toolbox and benchmark.
-- [MMTracking](https://github.com/open-mmlab/mmtracking): OpenMMLab video perception toolbox and benchmark.
-- [MMFlow](https://github.com/open-mmlab/mmflow): OpenMMLab optical flow toolbox and benchmark.
-- [MMagic](https://github.com/open-mmlab/mmagic): Open**MM**Lab **A**dvanced, **G**enerative and **I**ntelligent **C**reation toolbox.
-- [MMGeneration](https://github.com/open-mmlab/mmgeneration): OpenMMLab image and video generative models toolbox.
-- [MMDeploy](https://github.com/open-mmlab/mmdeploy): OpenMMLab model deployment framework.
+- [MMEngine](https://github.com/open-mmlab/mmengine): OpenMMLab 深度学习模型训练基础库
+- [MMCV](https://github.com/open-mmlab/mmcv): OpenMMLab 计算机视觉基础库
+- [MMEval](https://github.com/open-mmlab/mmeval): 统一开放的跨框架算法评测库
+- [MIM](https://github.com/open-mmlab/mim): MIM 是 OpenMMlab 项目、算法、模型的统一入口
+- [MMPreTrain](https://github.com/open-mmlab/mmpretrain): OpenMMLab 深度学习预训练工具箱
+- [MMDetection](https://github.com/open-mmlab/mmdetection): OpenMMLab 目标检测工具箱
+- [MMDetection3D](https://github.com/open-mmlab/mmdetection3d): OpenMMLab 新一代通用 3D 目标检测平台
+- [MMRotate](https://github.com/open-mmlab/mmrotate): OpenMMLab 旋转框检测工具箱与测试基准
+- [MMYOLO](https://github.com/open-mmlab/mmyolo): OpenMMLab YOLO 系列工具箱与测试基准
+- [MMSegmentation](https://github.com/open-mmlab/mmsegmentation): OpenMMLab 语义分割工具箱
+- [MMOCR](https://github.com/open-mmlab/mmocr): OpenMMLab 全流程文字检测识别理解工具包
+- [MMPose](https://github.com/open-mmlab/mmpose): OpenMMLab 姿态估计工具箱
+- [MMHuman3D](https://github.com/open-mmlab/mmhuman3d): OpenMMLab 人体参数化模型工具箱与测试基准
+- [MMSelfSup](https://github.com/open-mmlab/mmselfsup): OpenMMLab 自监督学习工具箱与测试基准
+- [MMRazor](https://github.com/open-mmlab/mmrazor): OpenMMLab 模型压缩工具箱与测试基准
+- [MMFewShot](https://github.com/open-mmlab/mmfewshot): OpenMMLab 少样本学习工具箱与测试基准
+- [MMAction2](https://github.com/open-mmlab/mmaction2): OpenMMLab 新一代视频理解工具箱
+- [MMTracking](https://github.com/open-mmlab/mmtracking): OpenMMLab 一体化视频目标感知平台
+- [MMFlow](https://github.com/open-mmlab/mmflow): OpenMMLab 光流估计工具箱与测试基准
+- [MMagic](https://github.com/open-mmlab/mmagic): OpenMMLab 新一代人工智能内容生成（AIGC）工具箱
+- [MMGeneration](https://github.com/open-mmlab/mmgeneration): OpenMMLab 图片视频生成模型工具箱
+- [MMDeploy](https://github.com/open-mmlab/mmdeploy): OpenMMLab 模型部署框架
+
+## 欢迎加入 OpenMMLab 社区
+
+扫描下方的二维码可关注 OpenMMLab 团队的[知乎官方账号](https://www.zhihu.com/people/openmmlab)，加入 OpenMMLab 团队的[官方交流 QQ 群](https://jq.qq.com/?_wv=1027&k=K0QI8ByU)，或通过添加微信“Open小喵Lab”加入官方交流微信群。
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/58739961/187154320-f3312cdf-31f2-4316-9dbb-8d7b0e1b7e08.jpg" height="400" />  <img src="https://user-images.githubusercontent.com/25839884/203904835-62392033-02d4-4c73-a68c-c9e4c1e2b07f.jpg" height="400" />  <img src="https://user-images.githubusercontent.com/58739961/187151778-d17c1368-125f-4fde-adbe-38cc6eb3be98.jpg" height="400" />
+</div>
+
+我们会在 OpenMMLab 社区为大家
+
+- 📢 分享 AI 框架的前沿核心技术
+- 💻 解读 PyTorch 常用模块源码
+- 📰 发布 OpenMMLab 的相关新闻
+- 🚀 介绍 OpenMMLab 开发的前沿算法
+- 🏃 获取更高效的问题答疑和意见反馈
+- 🔥 提供与各行各业开发者充分交流的平台
+
+干货满满 📘，等你来撩 💗，OpenMMLab 社区期待您的加入 👬
