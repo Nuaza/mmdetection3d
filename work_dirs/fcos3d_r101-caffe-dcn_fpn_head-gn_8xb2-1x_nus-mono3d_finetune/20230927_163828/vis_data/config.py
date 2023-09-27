@@ -46,8 +46,11 @@ metainfo = dict(classes=[
 model = dict(
     backbone=dict(
         dcn=dict(deform_groups=1, fallback_on_stride=False, type='DCNv2'),
-        depth=152,
+        depth=121,
         frozen_stages=1,
+        init_cfg=dict(
+            checkpoint='open-mmlab://detectron2/densenet121_caffe',
+            type='Pretrained'),
         norm_cfg=dict(requires_grad=False, type='BN'),
         norm_eval=True,
         num_stages=4,
@@ -64,7 +67,7 @@ model = dict(
             True,
         ),
         style='caffe',
-        type='mmdet.ResNet'),
+        type='mmdet.DenseNet'),
     bbox_head=dict(
         attr_branch=(256, ),
         bbox_coder=dict(code_size=9, type='FCOS3DBBoxCoder'),
