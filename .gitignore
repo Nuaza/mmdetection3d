@@ -126,6 +126,8 @@ mmdet3d/.mim
 data/s3dis/Stanford3dDataset_v1.2_Aligned_Version/
 data/scannet/scans/
 data/sunrgbd/OFFICIAL_SUNRGBD/
+data/kitti
+data/nuscenes
 *.obj
 *.ply
 
