@@ -5,4 +5,4 @@ model = dict(
         code_weight=[1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.05, 0.05]))
 # optimizer
 optim_wrapper = dict(optimizer=dict(lr=0.001))
-# load_from = 'work_dirs/fcos3d_nus/latest.pth'
+load_from = 'work_dirs/fcos3d_nus/latest.pth'
