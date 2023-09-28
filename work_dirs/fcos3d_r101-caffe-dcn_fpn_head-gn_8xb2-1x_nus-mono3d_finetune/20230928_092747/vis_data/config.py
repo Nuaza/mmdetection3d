@@ -46,10 +46,10 @@ metainfo = dict(classes=[
 model = dict(
     backbone=dict(
         dcn=dict(deform_groups=1, fallback_on_stride=False, type='DCNv2'),
-        depth=101,
+        depth=152,
         frozen_stages=1,
         init_cfg=dict(
-            checkpoint='open-mmlab://detectron2/resnet101_caffe',
+            checkpoint='open-mmlab://detectron2/resnet152_caffe',
             type='Pretrained'),
         norm_cfg=dict(requires_grad=False, type='BN'),
         norm_eval=True,
