@@ -258,7 +258,7 @@ test_pipeline = [
         'img',
     ], type='Pack3DDetInputs'),
 ]
-train_cfg = dict(max_epochs=20, type='EpochBasedTrainLoop', val_interval=2)
+train_cfg = dict(max_epochs=12, type='EpochBasedTrainLoop', val_interval=1)
 train_dataloader = dict(
     batch_size=4,
     dataset=dict(
